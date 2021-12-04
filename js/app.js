@@ -57,7 +57,18 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
+  let sumOne = sum(a, b)[0];
+  let prodOne = multiply(a, b)[0];
+  let sumTwo = sum(sumOne, c)[0];
+  let prodTwo = multiply(prodOne, c)[0];
+  let sumStr = `${a} and ${b} and ${c} sum to ${sumTwo}.`;
+  let prodStr = `The product of ${a} and ${b} and ${c} is ${prodTwo}.`;
+  //console.log(sumOne);
+  //console.log(sumTwo);
+  //console.log([sumTwo, sumStr]);
+  //console.log([prodTwo, prodStr]);
 
+  return [sumTwo, prodTwo, sumStr, prodStr];
 
 }
 
@@ -111,12 +122,12 @@ Test this function by hand in the console to get it working, and when you think 
 function multiplyArray(multArr) { //eslint-disable-line
   let multArrGrandTotal = multiply(testArray[0], testArray[1])[0];
   let mAGTProd = multiply(testArray[2], multArrGrandTotal)[0];
-  let multARRSTR = `The numbers ${testArray[0]},${testArray[1]},${testArray[2]} have a product of 24.`;
+  let multArrSTR = `The numbers ${testArray[0]},${testArray[1]},${testArray[2]} have a product of 24.`;
   // console.log(multArrGrandTotal);
   // console.log(mAGTProd);
   // console.log(multARRSTR);
 
-  return [mAGTProd, multARRSTR];
+  return [mAGTProd, multArrSTR];
 
 }
 
@@ -145,6 +156,18 @@ Test this function by hand in the console to get it working, and when you think 
 let testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+  let multAnyArr = multiply(testDynamicArray[0], testDynamicArray[1])[0];
+  let mAAProd = multiply(testDynamicArray[2], multAnyArr)[0];
+  let mAAProd2 = multiply(testDynamicArray[3], mAAProd)[0];
+  let mAAProd3 = multiply(testDynamicArray[4], mAAProd2)[0];
+  let multAnyArrStr = `The numbers ${testDynamicArray[0]},${testDynamicArray[1]},${testDynamicArray[2]},${testDynamicArray[3]},${testDynamicArray[4]} have a product of 120.`;
+  // console.log(multAnyArr);
+  // console.log(mAAProd);
+  // console.log(mAAProd2);
+  // console.log(mAAProd3);
+  // console.log(multAnyArrStr);
+
+  return [mAAProd3, multAnyArrStr];
 
 }
 
